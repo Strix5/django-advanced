@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Game{% endblock title %}</title>
+</head>
+
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<div>
+    <div>
+        <div>
+            {% include 'htmx/partial_game_add_form.html' %}
+            <!-- Таблица игр -->
+            <table>
+                <thead>
+                <tr>
+                    <!-- Заголовки столбцов таблицы -->
+                    <!-- Заголовок номера игры -->
+                    <th scope="col" style="width: 10%">
+                        <small>
+                            Num.
+                        </small>
+                    </th>
+
+                    <!-- Заголовок названия игры -->
+                    <th scope="col" style="width: 26%">
+                        <small>
+                            Name
+                        </small>
+                    </th>
+
+                    <!-- Заголовок создания игры -->
+                    <th scope="col" style="width: 26%">
+                        <small>
+                            Created
+                        </small>
+                    </th>
+
+                    <!-- Заголовок цены игры -->
+                    <th scope="col" style="width: 11%">
+                        <small>
+                            Price ($)
+                        </small>
+                    </th>
+
+                    <!-- Заголовок статуса игры -->
+                    <th scope="col" style="width: 11%">
+                        <small>
+                            Status
+                        </small>
+                    </th>
+
+                    <!-- Заголовок кнопок действия -->
+                    <th scope="col" style="width: 16%">
+                        <small>
+                            Actions
+                        </small>
+                    </th>
+                </tr>
+                </thead>
+                <!-- Список игр -->
+                <tbody id="book-list">
+                {% include "htmx/partial_game_list.html" %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/htmx.org@1.9.4"></script>
+    <script>
+        function cngElementsAtr(cls, atr, val){
+            var elems = document.getElementsByClassName(cls);
+            for(var i = 0; i < elems.length; i++) {
+                elems[i][atr] = val;
+            }
+        }
+        document.body.addEventListener('htmx:afterRequest', (event) => {
+            path_str = event.detail.pathInfo.requestPath;
+            if(path_str.includes('htmx1:add_game')){
+                cngElementsAtr('clrtxt', 'value', '');
+            }
+        });
+    </script>
+</body>
+</body>
+</html>

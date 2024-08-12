@@ -1,0 +1,27 @@
+<form method="post" action="">
+    <div>
+        <div>
+            {{ form.name }}
+        </div>
+
+        <div>
+            {{ form.description }}
+        </div>
+
+        <div>
+            {{ form.price }}
+        </div>
+
+        <div>
+            <!-- Кнопка "Add book" -->
+            <button
+                    type="submit"
+                    class="disbtn"
+                    hx-post="{% url 'htmx1:add_game' %}"
+                    hx-target="#game_list"
+                    hx-swap="beforeend">
+                Add game
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,49 @@
+<tr>
+    <!-- Ячейка номера игры -->
+    <td>
+        {{ game.id }}
+    </td>
+
+    <!-- Ячейка названия игры -->
+    <td>
+        {{ game.name }}
+    </td>
+
+    <!-- Ячейка автора игры -->
+    <td>
+        {{ game.created }}
+    </td>
+
+    <!-- Ячейка цены игры -->
+    <td>
+        {{ game.price }}
+    </td>
+
+    <!-- Ячейка состояния -->
+    <td>
+        {% if not game.played %}
+            <!-- Кнопка "Unplayed" -->
+            <button class="disbtn">
+                Unplayed
+            </button>
+        {% else %}
+            <!-- Кнопка "Played" -->
+            <button class="disbtn">
+                Played
+            </button>
+        {% endif %}
+    </td>
+
+    <!--  Ячейка кнопок действия -->
+    <td>
+        <!-- Кнопка "Edit" -->
+        <button class="disbtn">
+            Edit
+        </button>
+
+        <!-- Кнопка "Delete" -->
+        <button class="disbtn">
+            Delete
+        </button>
+    </td>
+</tr>
