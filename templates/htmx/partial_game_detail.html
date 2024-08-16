@@ -1,48 +1,48 @@
 <tr>
-    <!-- Ячейка номера игры -->
     <td>
         {{ game.id }}
     </td>
-
-    <!-- Ячейка названия игры -->
     <td>
         {{ game.name }}
     </td>
-
-    <!-- Ячейка автора игры -->
     <td>
         {{ game.created }}
     </td>
-
-    <!-- Ячейка цены игры -->
     <td>
         {{ game.price }}
     </td>
 
-    <!-- Ячейка состояния -->
     <td>
         {% if not game.played %}
-            <!-- Кнопка "Unplayed" -->
-            <button class="disbtn">
-                Unplayed
-            </button>
+        <button class="disbtn"
+                hx-patch="{% url 'htmx1:game_played_status' game.id %}"
+                hx-target="closest tr"
+                hx-swap="outerHTML">
+            Unplayed
+        </button>
         {% else %}
-            <!-- Кнопка "Played" -->
-            <button class="disbtn">
-                Played
-            </button>
+        <button class="disbtn"
+                hx-patch="{% url 'htmx1:game_played_status' game.id %}"
+                hx-target="closest tr"
+                hx-swap="outerHTML">
+            Played
+        </button>
         {% endif %}
     </td>
 
-    <!--  Ячейка кнопок действия -->
     <td>
-        <!-- Кнопка "Edit" -->
-        <button class="disbtn">
+        <button class="disbtn"
+                hx-get="{% url 'htmx1:game_edit' game.id %}"
+                hx-target="closest tr"
+                hx-swap="outerHTML">
             Edit
         </button>
 
-        <!-- Кнопка "Delete" -->
-        <button class="disbtn">
+        <button class="disbtn"
+                hx-delete="{% url 'htmx1:game_delete' game.id %}"
+                hx-target="closest tr"
+                hx-swap="outerHTML"
+                hx-confirm="Вы точно хотите удалить эту запись?">
             Delete
         </button>
     </td>

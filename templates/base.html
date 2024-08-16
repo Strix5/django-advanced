@@ -11,76 +11,146 @@
         <div>
             {% include 'htmx/partial_game_add_form.html' %}
             <!-- Таблица игр -->
-            <table>
-                <thead>
-                <tr>
-                    <!-- Заголовки столбцов таблицы -->
-                    <!-- Заголовок номера игры -->
-                    <th scope="col" style="width: 10%">
-                        <small>
-                            Num.
-                        </small>
-                    </th>
+            <form>
+                <table>
+                    <thead>
+                    <tr>
+                        <!-- Заголовки столбцов таблицы -->
+                        <!-- Заголовок номера игры -->
+                        <th scope="col" style="width: 10%">
+                            <small>
+                                Num.
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='id' direction='descend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇓
+                                </a>
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='id' direction='ascend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇑
+                                </a>
+                            </small>
+                        </th>
 
-                    <!-- Заголовок названия игры -->
-                    <th scope="col" style="width: 26%">
-                        <small>
-                            Name
-                        </small>
-                    </th>
+                        <!-- Заголовок названия игры -->
+                        <th scope="col" style="width: 26%">
+                            <small>
+                                Name
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='name' direction='descend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇓
+                                </a>
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='name' direction='ascend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇑
+                                </a>
+                            </small>
+                        </th>
 
-                    <!-- Заголовок создания игры -->
-                    <th scope="col" style="width: 26%">
-                        <small>
-                            Created
-                        </small>
-                    </th>
+                        <!-- Заголовок создания игры -->
+                        <th scope="col" style="width: 26%">
+                            <small>
+                                Created
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='created' direction='descend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇓
+                                </a>
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='created' direction='ascend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇑
+                                </a>
+                            </small>
+                        </th>
 
-                    <!-- Заголовок цены игры -->
-                    <th scope="col" style="width: 11%">
-                        <small>
-                            Price ($)
-                        </small>
-                    </th>
+                        <!-- Заголовок цены игры -->
+                        <th scope="col" style="width: 11%">
+                            <small>
+                                Price ($)
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='price' direction='descend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇓
+                                </a>
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='price' direction='ascend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇑
+                                </a>
+                            </small>
+                        </th>
 
-                    <!-- Заголовок статуса игры -->
-                    <th scope="col" style="width: 11%">
-                        <small>
-                            Status
-                        </small>
-                    </th>
+                        <!-- Заголовок статуса игры -->
+                        <th scope="col" style="width: 11%">
+                            <small>
+                                Status
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='played' direction='descend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇓
+                                </a>
+                                <a href=""
+                                   hx-get="{% url 'htmx1:game_list_sort' filter_field='played' direction='ascend' %}"
+                                   hx-target="#game-list"
+                                   hx-swap="innerHTML">
+                                    ⇑
+                                </a>
+                            </small>
+                        </th>
 
-                    <!-- Заголовок кнопок действия -->
-                    <th scope="col" style="width: 16%">
-                        <small>
-                            Actions
-                        </small>
-                    </th>
-                </tr>
-                </thead>
-                <!-- Список игр -->
-                <tbody id="game-list">
-                {% include "htmx/partial_game_list.html" %}
-                </tbody>
-            </table>
+                        <!-- Заголовок кнопок действия -->
+                        <th scope="col" style="width: 16%">
+                            <small>
+                                Actions
+                            </small>
+                        </th>
+                    </tr>
+                    </thead>
+                    <!-- Список игр -->
+                    <tbody id="game-list">
+                    {% include "htmx/partial_game_list.html" %}
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 </div>
 <script src="https://unpkg.com/htmx.org@1.9.4"></script>
-    <script>
-        function cngElementsAtr(cls, atr, val){
-            var elems = document.getElementsByClassName(cls);
-            for(var i = 0; i < elems.length; i++) {
-                elems[i][atr] = val;
-            }
+<script>
+    function cngElementsAtr(cls, atr, val){
+        var elems = document.getElementsByClassName(cls);
+        for(var i = 0; i < elems.length; i++) {
+            elems[i][atr] = val;
         }
-        document.body.addEventListener('htmx:afterRequest', (event) => {
-            path_str = event.detail.pathInfo.requestPath;
-            if(path_str.includes('htmx1:add_game')){
-                cngElementsAtr('clrtxt', 'value', '');
+    }
+    document.body.addEventListener('htmx:afterRequest', (event) => {
+        path_str = event.detail.pathInfo.requestPath;
+        if(path_str.includes('htmx1:add_game')){
+            cngElementsAtr('clrtxt', 'value', '');
+        }else if(path_str.includes('htmx1:game_edit')){
+            if(event.detail.requestConfig.verb === 'get'){
+                cngElementsAtr('disbtn', 'disabled', true);
+            }else{
+                cngElementsAtr('disbtn', 'disabled', false);
             }
-        });
-    </script>
+        }else if(path_str.includes('htmx1:game_detail')){
+            cngElementsAtr('disbtn', 'disabled', false);
+        }
+    });
+</script>
 </body>
 </body>
 </html>

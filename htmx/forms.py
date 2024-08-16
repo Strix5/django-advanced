@@ -28,3 +28,15 @@ class GameAddForm(forms.ModelForm):
     class Meta:
         model = Game
         fields = ['name', 'description', 'price']
+
+
+class GameEditForm(forms.ModelForm):
+    name = forms.CharField(required=False, widget=forms.TextInput())
+    description = forms.CharField(required=False, widget=forms.TextInput())
+    price = forms.CharField(required=False, widget=forms.TextInput())
+
+    class Meta:
+        model = Game
+        fields = ['name', 'description', 'price']
+
+

@@ -1,0 +1,44 @@
+<tr>
+    <td>
+        {{ game.id }}
+    </td>
+
+    <td>
+        {{ form.name }}
+    </td>
+
+    <td>
+        {{ form.description }}
+    </td>
+
+    <td>
+        {{ form.price }}
+    </td>
+
+    <td>
+        {% if not game.played %}
+        <button disabled>
+            Unplayed
+        </button>
+        {% else %}
+        <button disabled>
+            Played
+        </button>
+        {% endif %}
+    </td>
+
+    <td>
+        <button type="submit"
+                hx-post="{% url 'htmx1:game_edit' game.id %}"
+                hx-target="closest tr"
+                hx-swap="outerHTML"
+                hx-include="closest tr">
+            Save
+        </button>
+        <button hx-get="{% url 'htmx1:game_detail' game.id %}"
+                hx-target="closest tr"
+                hx-swap="outerHTML">
+            Cancel
+        </button>
+    </td>
+</tr>
