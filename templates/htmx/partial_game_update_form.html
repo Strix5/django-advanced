@@ -1,41 +1,43 @@
-<tr>
-    <td>
+<tr class="{% if game.played %}grey-text{% endif %}">
+    <td class="align-middle text-center ps-2">
         {{ game.id }}
     </td>
 
-    <td>
+    <td class="align-middle ps-2">
         {{ form.name }}
     </td>
 
-    <td>
+    <td class="align-middle ps-2">
         {{ form.description }}
     </td>
 
-    <td>
+    <td class="align-middle text-center">
         {{ form.price }}
     </td>
 
-    <td>
+    <td class="align-middle text-center">
         {% if not game.played %}
-        <button disabled>
+        <button class="table-button status-button btn btn-primary btn-sm" disabled>
             Unplayed
         </button>
         {% else %}
-        <button disabled>
+        <button class="table-button status-button btn btn-secondary btn-sm" disabled>
             Played
         </button>
         {% endif %}
     </td>
 
-    <td>
+    <td class="align-middle text-center">
         <button type="submit"
+                class="table-button any-button btn btn-success btn-sm me-2"
                 hx-post="{% url 'htmx1:game_edit' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML"
                 hx-include="closest tr">
             Save
         </button>
-        <button hx-get="{% url 'htmx1:game_detail' game.id %}"
+        <button class="table-button any-button btn btn-warning btn-sm"
+                hx-get="{% url 'htmx1:game_detail' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
             Cancel

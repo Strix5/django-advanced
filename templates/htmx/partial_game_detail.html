@@ -1,27 +1,27 @@
-<tr>
-    <td>
+<tr class="{% if game.played %}grey-text{% endif %}">
+    <td class="align-middle text-center ps-2">
         {{ game.id }}
     </td>
-    <td>
+    <td class="align-middle ps-2">
         {{ game.name }}
     </td>
-    <td>
+    <td class="align-middle ps-2">
         {{ game.created }}
     </td>
-    <td>
+    <td class="align-middle text-center">
         {{ game.price }}
     </td>
 
-    <td>
+    <td class="align-middle text-center">
         {% if not game.played %}
-        <button class="disbtn"
+        <button class="disbtn table-button status-button btn btn-primary btn-sm"
                 hx-patch="{% url 'htmx1:game_played_status' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
             Unplayed
         </button>
         {% else %}
-        <button class="disbtn"
+        <button class="disbtn table-button status-button btn btn-secondary btn-sm"
                 hx-patch="{% url 'htmx1:game_played_status' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
@@ -30,15 +30,15 @@
         {% endif %}
     </td>
 
-    <td>
-        <button class="disbtn"
+    <td class="align-middle text-center">
+        <button class="disbtn table-button any-button btn btn-primary btn-sm me-2"
                 hx-get="{% url 'htmx1:game_edit' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
             Edit
         </button>
 
-        <button class="disbtn"
+        <button class="disbtn table-button any-button btn btn-danger btn-sm"
                 hx-delete="{% url 'htmx1:game_delete' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML"

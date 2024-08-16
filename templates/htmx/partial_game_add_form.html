@@ -1,22 +1,22 @@
-<form method="post" action="">
-    <div>
-        <div>
+<form class="form-inline" method="post" action="">
+    <div class="row">
+        <div class="col">
             {{ form.name }}
         </div>
 
-        <div>
+        <div class="col">
             {{ form.description }}
         </div>
 
-        <div>
+        <div class="col">
             {{ form.price }}
         </div>
 
-        <div>
+        <div class="col">
             <!-- Кнопка "Add game" -->
             <button
                     type="submit"
-                    class="disbtn"
+                    class="disbtn btn btn-primary"
                     hx-post="{% url 'htmx1:add_game' %}"
                     hx-target="#game-list"
                     hx-swap="beforeend">
