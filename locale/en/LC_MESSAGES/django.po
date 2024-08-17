@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-17 14:44+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\django_advanced\settings.py:122
+msgid "English"
+msgstr ""
+
+#: .\django_advanced\settings.py:123
+msgid "Russian"
+msgstr ""
+
+#: .\templates\base.html:29
+msgid "Num."
+msgstr ""
+
+#: .\templates\base.html:48
+msgid "Name"
+msgstr ""
+
+#: .\templates\base.html:67
+msgid "Created"
+msgstr ""
+
+#: .\templates\base.html:86
+msgid "Price"
+msgstr ""
+
+#: .\templates\base.html:105 .\templates\htmx\partial_game_detail.html:30
+#: .\templates\htmx\partial_game_update_form.html:27
+msgid "Played"
+msgstr ""
+
+#: .\templates\base.html:124
+msgid "Actions"
+msgstr ""
+
+#: .\templates\htmx\partial_game_add_form.html:25
+msgid "Add game"
+msgstr ""
+
+#: .\templates\htmx\partial_game_detail.html:23
+#: .\templates\htmx\partial_game_update_form.html:23
+msgid "Unplayed"
+msgstr ""
+
+#: .\templates\htmx\partial_game_detail.html:40
+msgid "Edit"
+msgstr ""
+
+#: .\templates\htmx\partial_game_detail.html:48
+msgid "Delete"
+msgstr ""
+
+#: .\templates\htmx\partial_game_update_form.html:39
+msgid "Save"
+msgstr ""
+
+#: .\templates\htmx\partial_game_update_form.html:45
+msgid "Cancel"
+msgstr ""

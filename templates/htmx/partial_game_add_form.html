@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <form class="form-inline" method="post" action="">
     <div class="row">
         <div class="col">
@@ -20,7 +22,7 @@
                     hx-post="{% url 'htmx1:add_game' %}"
                     hx-target="#game-list"
                     hx-swap="beforeend">
-                Add game
+               {% trans 'Add game' %}
             </button>
         </div>
     </div>

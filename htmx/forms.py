@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from .models import Game
 
@@ -21,9 +22,12 @@ from .models import Game
 #         }
 
 class GameAddForm(forms.ModelForm):
-    name = forms.CharField(required=False, widget=forms.TextInput(attrs={"class": "clrtxt", "placeholder": "Name"}))
-    description = forms.CharField(required=False, widget=forms.TextInput(attrs={"class": "clrtxt", "placeholder": "Description"}))
-    price = forms.CharField(required=False, widget=forms.TextInput(attrs={"class": "clrtxt", "placeholder": "Price"}))
+    name = forms.CharField(required=False,
+                           widget=forms.TextInput(attrs={"class": "clrtxt", "placeholder": _("Name")}))
+    description = forms.CharField(required=False,
+                                  widget=forms.TextInput(attrs={"class": "clrtxt", "placeholder": _("Description")}))
+    price = forms.CharField(required=False,
+                            widget=forms.TextInput(attrs={"class": "clrtxt", "placeholder": _("Price")}))
 
     class Meta:
         model = Game

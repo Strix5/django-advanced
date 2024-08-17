@@ -17,12 +17,14 @@ Including another URLconf
 import debug_toolbar
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
+    path('rosetta/', include('rosetta.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
     path('', include('permis.urls', namespace='permis')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('movies/', include('movies.urls', namespace='movies')),
     path('htmx/', include('htmx.urls', namespace='htmx1'))
-]
+)

@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <tr class="{% if game.played %}grey-text{% endif %}">
     <td class="align-middle text-center ps-2">
         {{ game.id }}
@@ -18,11 +20,11 @@
     <td class="align-middle text-center">
         {% if not game.played %}
         <button class="table-button status-button btn btn-primary btn-sm" disabled>
-            Unplayed
+            {% trans 'Unplayed' %}
         </button>
         {% else %}
         <button class="table-button status-button btn btn-secondary btn-sm" disabled>
-            Played
+            {% trans 'Played' %}
         </button>
         {% endif %}
     </td>
@@ -34,13 +36,13 @@
                 hx-target="closest tr"
                 hx-swap="outerHTML"
                 hx-include="closest tr">
-            Save
+            {% trans 'Save' %}
         </button>
         <button class="table-button any-button btn btn-warning btn-sm"
                 hx-get="{% url 'htmx1:game_detail' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
-            Cancel
+            {% trans 'Cancel' %}
         </button>
     </td>
 </tr>

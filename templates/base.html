@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@
                         <!-- Заголовок номера игры -->
                         <th scope="col" style="width: 10%">
                             <small>
-                                Num.
+                                {% trans 'Num.' %}
                                 <a href=""
                                    hx-get="{% url 'htmx1:game_list_sort' filter_field='id' direction='descend' %}"
                                    hx-target="#game-list"
@@ -44,7 +45,7 @@
                         <!-- Заголовок названия игры -->
                         <th scope="col" style="width: 26%">
                             <small>
-                                Name
+                                {% trans 'Name' %}
                                 <a href=""
                                    hx-get="{% url 'htmx1:game_list_sort' filter_field='name' direction='descend' %}"
                                    hx-target="#game-list"
@@ -63,7 +64,7 @@
                         <!-- Заголовок создания игры -->
                         <th scope="col" style="width: 26%">
                             <small>
-                                Created
+                                {% trans 'Created' %}
                                 <a href=""
                                    hx-get="{% url 'htmx1:game_list_sort' filter_field='created' direction='descend' %}"
                                    hx-target="#game-list"
@@ -82,7 +83,7 @@
                         <!-- Заголовок цены игры -->
                         <th scope="col" style="width: 11%">
                             <small>
-                                Price ($)
+                                {% trans 'Price' %} ($)
                                 <a href=""
                                    hx-get="{% url 'htmx1:game_list_sort' filter_field='price' direction='descend' %}"
                                    hx-target="#game-list"
@@ -101,7 +102,7 @@
                         <!-- Заголовок статуса игры -->
                         <th scope="col" style="width: 11%">
                             <small>
-                                Status
+                                {% trans 'Played' %}
                                 <a href=""
                                    hx-get="{% url 'htmx1:game_list_sort' filter_field='played' direction='descend' %}"
                                    hx-target="#game-list"
@@ -120,7 +121,7 @@
                         <!-- Заголовок кнопок действия -->
                         <th scope="col" style="width: 16%">
                             <small>
-                                Actions
+                                {% trans 'Actions' %}
                             </small>
                         </th>
                     </tr>

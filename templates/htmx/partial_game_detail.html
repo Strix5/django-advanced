@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <tr class="{% if game.played %}grey-text{% endif %}">
     <td class="align-middle text-center ps-2">
         {{ game.id }}
@@ -18,14 +20,14 @@
                 hx-patch="{% url 'htmx1:game_played_status' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
-            Unplayed
+            {% trans 'Unplayed' %}
         </button>
         {% else %}
         <button class="disbtn table-button status-button btn btn-secondary btn-sm"
                 hx-patch="{% url 'htmx1:game_played_status' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
-            Played
+            {% trans 'Played' %}
         </button>
         {% endif %}
     </td>
@@ -35,7 +37,7 @@
                 hx-get="{% url 'htmx1:game_edit' game.id %}"
                 hx-target="closest tr"
                 hx-swap="outerHTML">
-            Edit
+            {% trans 'Edit' %}
         </button>
 
         <button class="disbtn table-button any-button btn btn-danger btn-sm"
@@ -43,7 +45,7 @@
                 hx-target="closest tr"
                 hx-swap="outerHTML"
                 hx-confirm="Вы точно хотите удалить эту запись?">
-            Delete
+            {% trans 'Delete' %}
         </button>
     </td>
 </tr>
