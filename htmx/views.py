@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_http_methods
+from django.utils.translation import gettext_lazy as _
 
 from .models import Game
 from .forms import GameAddForm, GameEditForm
@@ -58,6 +59,17 @@ def game_played_status(request, pk):
 
 @require_http_methods(['GET'])
 def game_list_sort(request, filter_field, direction):
-    filter_field = '-' + filter_field if direction == 'descend' else filter_field
-    list_game = Game.objects.order_by(filter_field)
+    filter_dict = {_('id'): 'pk',
+                   _('name'): 'name',
+                   _('description'): 'description',
+                   _('price'): 'price',
+                   _('created'): 'created',
+                   _('played'): 'played'}
+
+    if filter_field in filter_dict:
+        filter_field = '-' + filter_dict[filter_field] if direction == _('descend') else filter_dict[filter_field]
+        list_game = Game.objects.order_by(filter_field)
+    else:
+        list_game = Game.objects.all()
+
     return render(request, 'htmx/partial_game_list.html', context={'game_list': list_game})

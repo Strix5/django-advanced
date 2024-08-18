@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-17 14:44+0500\n"
+"POT-Creation-Date: 2024-08-17 18:18+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,4 +32,56 @@ msgstr ""
 
 #: .\htmx\models.py:11
 msgid "Played"
+msgstr ""
+
+#: .\htmx\urls.py:11
+msgid "add_game/"
+msgstr ""
+
+#: .\htmx\urls.py:12
+msgid "game_detail/<int:pk>/"
+msgstr ""
+
+#: .\htmx\urls.py:13
+msgid "game_edit/<int:pk>/"
+msgstr ""
+
+#: .\htmx\urls.py:14
+msgid "game_delete/<int:pk>/"
+msgstr ""
+
+#: .\htmx\urls.py:15
+msgid "game_played_status/<int:pk>/"
+msgstr ""
+
+#: .\htmx\urls.py:16
+msgid "game_list_sort/<str:filter_field>/<str:direction>/"
+msgstr ""
+
+#: .\htmx\views.py:62
+msgid "id"
+msgstr ""
+
+#: .\htmx\views.py:63
+msgid "name"
+msgstr ""
+
+#: .\htmx\views.py:64
+msgid "description"
+msgstr ""
+
+#: .\htmx\views.py:65
+msgid "price"
+msgstr ""
+
+#: .\htmx\views.py:66
+msgid "created"
+msgstr ""
+
+#: .\htmx\views.py:67
+msgid "played"
+msgstr ""
+
+#: .\htmx\views.py:70
+msgid "descend"
 msgstr ""

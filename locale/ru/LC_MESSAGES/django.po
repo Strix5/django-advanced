@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-17 14:44+0500\n"
+"POT-Creation-Date: 2024-08-18 15:35+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,38 +20,122 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\django_advanced\settings.py:122
+#: .\django_advanced\settings.py:123
 msgid "English"
 msgstr "Английский"
 
-#: .\django_advanced\settings.py:123
+#: .\django_advanced\settings.py:124
 msgid "Russian"
 msgstr "Русский"
 
-#: .\templates\base.html:29
+#: .\templates\base.html:38
+msgid "id"
+msgstr "id"
+
+#: .\templates\base.html:38
+msgid "name"
+msgstr "Название"
+
+#: .\templates\base.html:39
+msgid "description"
+msgstr "Описание"
+
+#: .\templates\base.html:39
+#, fuzzy
+#| msgid "Price"
+msgid "price"
+msgstr "Цена"
+
+#: .\templates\base.html:40
+#, fuzzy
+#| msgid "Unplayed"
+msgid "played"
+msgstr "Не играна"
+
+#: .\templates\base.html:40
+msgid "ascend"
+msgstr "возрастание"
+
+#: .\templates\base.html:41
+msgid "descend"
+msgstr "убывание"
+
+#: .\templates\base.html:48
 msgid "Num."
 msgstr "Номер"
 
-#: .\templates\base.html:48
+#: .\templates\base.html:53
+msgid "id-descend"
+msgstr "id-убывание"
+
+#: .\templates\base.html:59
+msgid "id-ascend"
+msgstr "id-возрастание"
+
+#: .\templates\base.html:67
 msgid "Name"
 msgstr "Название"
 
-#: .\templates\base.html:67
+#: .\templates\base.html:72
+msgid "name-descend"
+msgstr "название-убывание"
+
+#: .\templates\base.html:78
+msgid "name-ascend"
+msgstr "название-возрастание"
+
+#: .\templates\base.html:86
 msgid "Created"
 msgstr "Опубликовано"
 
-#: .\templates\base.html:86
+#: .\templates\base.html:91
+msgid "created-descend"
+msgstr "опубликовано-убывание"
+
+#: .\templates\base.html:97
+msgid "created-ascend"
+msgstr "опубликовано-возрастание"
+
+#: .\templates\base.html:105
 msgid "Price"
 msgstr "Цена"
 
-#: .\templates\base.html:105 .\templates\htmx\partial_game_detail.html:30
+#: .\templates\base.html:110 .\templates\base.html:116
+msgid "price-descend"
+msgstr "цена-убывание"
+
+#: .\templates\base.html:124 .\templates\htmx\partial_game_detail.html:30
 #: .\templates\htmx\partial_game_update_form.html:27
 msgid "Played"
 msgstr "Сыграно"
 
-#: .\templates\base.html:124
+#: .\templates\base.html:129
+msgid "played-descend"
+msgstr "сыграно-убывание"
+
+#: .\templates\base.html:135
+msgid "played-ascend"
+msgstr "сыграно-возрастание"
+
+#: .\templates\base.html:143
 msgid "Actions"
 msgstr "Кнопки"
+
+#: .\templates\base.html:172
+msgid "htmx1:add_game"
+msgstr ""
+
+#: .\templates\base.html:174
+msgid "htmx1:game_edit"
+msgstr ""
+
+#: .\templates\base.html:180
+msgid "htmx1:game_detail"
+msgstr ""
+
+#: .\templates\base.html:182
+msgid "htmx1:game_list_sort"
+msgstr ""
 
 #: .\templates\htmx\partial_game_add_form.html:25
 msgid "Add game"
